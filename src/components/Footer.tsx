@@ -21,7 +21,7 @@ export default function Footer() {
             of the web, one pixel at a time.
           </p>
           <div className="space-y-2 mt-6">
-            <div className="flex items-center gap-3 text-muted text-sm">
+            <div className="flex items-center gap-3 text-primary font-body-md">
               <MapPin size={18} />
               <span>Dhaka, Bangladesh</span>
             </div>
