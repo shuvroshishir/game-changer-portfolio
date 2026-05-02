@@ -81,7 +81,9 @@ export default function Hero() {
           {[
             { icon: <img src="https://skillicons.dev/icons?i=github" className="w-6 h-6" alt="GitHub" />, href: "https://github.com/shuvroshishir" },
             { icon: <img src="https://skillicons.dev/icons?i=linkedin" className="w-6 h-6" alt="LinkedIn" />, href: "https://www.linkedin.com/in/shishirkarmokar/" },
+            { icon: <img src="https://cdn.simpleicons.org/whatsapp/25D366" className="w-6 h-6" alt="WhatsApp" />, href: "https://wa.me/8801879785495" },
             { icon: <img src="https://skillicons.dev/icons?i=instagram" className="w-6 h-6" alt="Instagram" />, href: "https://www.instagram.com/mr_shuvroshishir" },
+            { icon: <img src="https://cdn.simpleicons.org/facebook/1877F2" className="w-6 h-6" alt="Facebook" />, href: "https://www.facebook.com/iamshishirkarmokar" },
           ].map((social, i) => (
             <Link
               key={i}

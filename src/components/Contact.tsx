@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Mail, Globe, Send, ArrowRight } from "lucide-react";
+import { Mail, Globe, Send, ArrowRight, Phone, CheckCircle2, AlertCircle } from "lucide-react";
 
 export default function Contact() {
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [formMessage, setFormMessage] = useState("");
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -40,7 +42,7 @@ export default function Contact() {
   return (
     <section ref={sectionRef} className="py-16 sm:py-section-padding px-8 relative overflow-hidden" id="contact">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] glow-radial -z-10 opacity-20"></div>
-      
+
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="font-h2 text-4xl md:text-h2 text-on-background font-bold">Get in Touch</h2>
@@ -51,10 +53,24 @@ export default function Contact() {
           {/* Contact Info */}
           <div className="md:col-span-4 space-y-6">
             <h4 className="font-h3 text-[24px] text-on-background mb-8">Talk to me</h4>
-            
+            <div className="contact-info-card glass-card p-6 rounded-2xl group hover:border-green-400 transition-colors">
+              <div className="flex items-center gap-4 mb-4">
+                <Phone className="text-green-400 group-hover:scale-110 transition-transform" size={32} />
+                <h5 className="text-on-background font-h3 text-[18px]">Call</h5>
+              </div>
+              <p className="text-muted text-sm mb-4">01879785495</p>
+              <a
+                href="tel:01879785495"
+                className="text-green-400 flex items-center gap-2 font-label-caps text-xs group-hover:gap-4 transition-all"
+              >
+                Call me <ArrowRight size={14} />
+              </a>
+            </div>
             <div className="contact-info-card glass-card p-6 rounded-2xl group hover:border-blue-400 transition-colors">
-              <Mail className="text-blue-400 mb-4 group-hover:scale-110 transition-transform" size={32} />
-              <h5 className="text-on-background font-h3 text-[18px]">Email</h5>
+              <div className="flex items-center gap-4 mb-4">
+                <Mail className="text-blue-400 group-hover:scale-110 transition-transform" size={32} />
+                <h5 className="text-on-background font-h3 text-[18px]">Email</h5>
+              </div>
               <p className="text-muted text-sm mb-4">shuvroshishir.dev@gmail.com</p>
               <a
                 href="mailto:shuvroshishir.dev@gmail.com"
@@ -65,63 +81,151 @@ export default function Contact() {
             </div>
 
             <div className="contact-info-card glass-card p-6 rounded-2xl group hover:border-cyan-400 transition-colors">
-              <Globe className="text-cyan-400 mb-4 group-hover:scale-110 transition-transform" size={32} />
-              <h5 className="text-on-background font-h3 text-[18px]">LinkedIn</h5>
+              <div className="flex items-center gap-4 mb-4">
+                <Globe className="text-cyan-400 group-hover:scale-110 transition-transform" size={32} />
+                <h5 className="text-on-background font-h3 text-[18px]">LinkedIn</h5>
+              </div>
               <p className="text-muted text-sm mb-4">shishirkarmokar</p>
               <a
                 href="https://www.linkedin.com/in/shishirkarmokar/"
                 target="_blank"
                 className="text-cyan-400 flex items-center gap-2 font-label-caps text-xs group-hover:gap-4 transition-all"
               >
-                Write me <ArrowRight size={14} />
+                Text me <ArrowRight size={14} />
               </a>
             </div>
+
+
           </div>
 
           {/* Contact Form */}
           <div className="md:col-span-8 contact-form-container">
+            <h4 className="font-h3 text-[24px] text-on-background mb-8">Write me your project</h4>
             <div className="glass-card p-8 md:p-10 rounded-[32px] relative overflow-hidden">
-              <h4 className="font-h3 text-[24px] text-on-background mb-8">Write me your project</h4>
-              <form action="mailto:shuvroshishir.dev@gmail.com" method="post" encType="text/plain" className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="font-label-caps text-muted text-xs">NAME</label>
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      placeholder="Insert your name"
-                      className="w-full bg-surface-container border border-outline-variant rounded-xl px-4 py-3 text-on-background focus:border-blue-500 focus:ring-0 outline-none transition-colors"
-                    />
+              {status === "success" ? (
+                <div className="flex flex-col items-center justify-center py-12 text-center space-y-4 animate-in fade-in zoom-in duration-500">
+                  <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center text-green-500">
+                    <CheckCircle2 size={48} />
                   </div>
-                  <div className="space-y-2">
-                    <label className="font-label-caps text-muted text-xs">MAIL</label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      placeholder="Insert your email"
-                      className="w-full bg-surface-container border border-outline-variant rounded-xl px-4 py-3 text-on-background focus:border-blue-500 focus:ring-0 outline-none transition-colors"
-                    />
-                  </div>
+                  <h3 className="text-2xl font-h2 text-on-background">Message Sent!</h3>
+                  <p className="text-muted max-w-sm">
+                    Thank you for reaching out. I have received your message and will get back to you shortly.
+                  </p>
+                  <button
+                    onClick={() => setStatus("idle")}
+                    className="text-blue-400 hover:underline font-label-caps text-sm pt-4"
+                  >
+                    Send another message
+                  </button>
                 </div>
-                <div className="space-y-2">
-                  <label className="font-label-caps text-muted text-xs">PROJECT</label>
-                  <textarea
-                    name="message"
-                    required
-                    rows={4}
-                    placeholder="Write your project details"
-                    className="w-full bg-surface-container border border-outline-variant rounded-xl px-4 py-3 text-on-background focus:border-blue-500 focus:ring-0 outline-none transition-colors"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="gradient-border-btn w-full md:w-auto px-12 py-4 rounded-xl font-h3 text-[18px] text-on-background flex items-center justify-center gap-3 transition-transform active:scale-95"
+              ) : (
+                <form
+                  onSubmit={async (e) => {
+                    e.preventDefault();
+                    setStatus("loading");
+                    const formData = new FormData(e.currentTarget);
+                    
+                    // IMPORTANT: You will need a Web3Forms Access Key
+                    // Get it at https://web3forms.com/
+                    formData.append("access_key", "cb93b39b-e6fc-4239-81a4-f61e793d265b"); 
+
+                    try {
+                      const response = await fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        body: formData
+                      });
+                      const data = await response.json();
+                      if (data.success) {
+                        setStatus("success");
+                        (e.target as HTMLFormElement).reset();
+                      } else {
+                        setStatus("error");
+                        setFormMessage(data.message || "Something went wrong.");
+                      }
+                    } catch (err) {
+                      setStatus("error");
+                      setFormMessage("Failed to send message. Please try again.");
+                    }
+                  }}
+                  className="space-y-6"
                 >
-                  Send Message <Send size={20} />
-                </button>
-              </form>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="font-label-caps text-muted text-xs">NAME</label>
+                      <input
+                        type="text"
+                        name="name"
+                        required
+                        placeholder="Insert your name"
+                        className="w-full bg-surface-container border border-outline-variant rounded-xl px-4 py-3 text-on-background focus:border-blue-500 focus:ring-0 outline-none transition-colors"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="font-label-caps text-muted text-xs">PHONE</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        required
+                        placeholder="Insert your phone number"
+                        className="w-full bg-surface-container border border-outline-variant rounded-xl px-4 py-3 text-on-background focus:border-blue-500 focus:ring-0 outline-none transition-colors"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="font-label-caps text-muted text-xs">ADDRESS</label>
+                      <input
+                        type="text"
+                        name="address"
+                        required
+                        placeholder="Insert your address"
+                        className="w-full bg-surface-container border border-outline-variant rounded-xl px-4 py-3 text-on-background focus:border-blue-500 focus:ring-0 outline-none transition-colors"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="font-label-caps text-muted text-xs">MAIL</label>
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        placeholder="Insert your email"
+                        className="w-full bg-surface-container border border-outline-variant rounded-xl px-4 py-3 text-on-background focus:border-blue-500 focus:ring-0 outline-none transition-colors"
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="font-label-caps text-muted text-xs">PROJECT</label>
+                    <textarea
+                      name="message"
+                      required
+                      rows={4}
+                      placeholder="Write your project details"
+                      className="w-full bg-surface-container border border-outline-variant rounded-xl px-4 py-3 text-on-background focus:border-blue-500 focus:ring-0 outline-none transition-colors"
+                    ></textarea>
+                  </div>
+
+                  {status === "error" && (
+                    <div className="flex items-center gap-2 text-red-500 text-sm bg-red-500/10 p-3 rounded-lg">
+                      <AlertCircle size={16} />
+                      <span>{formMessage}</span>
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={status === "loading"}
+                    className="gradient-border-btn w-full md:w-auto px-12 py-4 rounded-xl font-h3 text-[18px] text-on-background flex items-center justify-center gap-3 transition-transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {status === "loading" ? "Sending..." : "Send Message"}
+                    {status === "loading" ? (
+                      <div className="w-5 h-5 border-2 border-on-background/30 border-t-on-background rounded-full animate-spin" />
+                    ) : (
+                      <Send size={20} />
+                    )}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>

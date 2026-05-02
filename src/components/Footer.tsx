@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Share2, Terminal, Globe, ArrowUp, Mail, MapPin } from "lucide-react";
+import { Share2, Terminal, Globe, ArrowUp, Mail, MapPin, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -29,6 +29,16 @@ export default function Footer() {
               <Mail size={18} />
               <span>shuvroshishir.dev@gmail.com</span>
             </div>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-primary font-body-md">
+              <div className="flex items-center gap-3">
+                <Phone size={18} />
+                <span>01879785495</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone size={18} />
+                <span>01775915321</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -44,7 +54,7 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="font-label-caps text-blue-400 mb-6 uppercase tracking-widest">Connect With Me</h4>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3">
               <Link
                 href="https://github.com/shuvroshishir"
                 target="_blank"
@@ -58,6 +68,13 @@ export default function Footer() {
                 className="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:border-blue-400 transition-all overflow-hidden"
               >
                 <img src="https://skillicons.dev/icons?i=linkedin" className="w-6 h-6" alt="LinkedIn" />
+              </Link>
+              <Link
+                href="https://wa.me/8801879785495"
+                target="_blank"
+                className="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:border-blue-400 transition-all overflow-hidden"
+              >
+                <img src="https://cdn.simpleicons.org/whatsapp/25D366" className="w-6 h-6" alt="WhatsApp" />
               </Link>
               <Link
                 href="https://www.instagram.com/mr_shuvroshishir"
@@ -83,14 +100,15 @@ export default function Footer() {
           © 2026 Shishir Karmokar. Crafted with technical mastery.
         </p>
         <div className="flex gap-4 md:gap-6">
-          {["LinkedIn", "GitHub", "Instagram", "Facebook"].map((social) => (
+          {["LinkedIn", "WhatsApp", "GitHub", "Instagram", "Facebook"].map((social) => (
             <Link
               key={social}
               href={
                 social === "LinkedIn" ? "https://www.linkedin.com/in/shishirkarmokar/" :
                   social === "GitHub" ? "https://github.com/shuvroshishir" :
                     social === "Instagram" ? "https://www.instagram.com/mr_shuvroshishir" :
-                      "https://www.facebook.com/iamshishirkarmokar"
+                      social === "WhatsApp" ? "https://wa.me/8801879785495" :
+                        "https://www.facebook.com/iamshishirkarmokar"
               }
               target="_blank"
               className="font-label-caps text-[10px] md:text-xs text-muted hover:text-on-background transition-colors"
