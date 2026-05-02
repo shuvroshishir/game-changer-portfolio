@@ -120,9 +120,9 @@ npm run dev
 
 ## 🤝 Connect With Me
 
-* 💼 LinkedIn: https://linkedin.com/in/your-profile
-* 💻 GitHub: https://github.com/your-username
-* 📧 Email: [shishir.dev@gmail.com](mailto:shishir.dev@gmail.com)
+* 💼 LinkedIn: https://www.linkedin.com/in/shishirkarmokar/
+* 💻 GitHub: https://github.com/shuvroshishir
+* 📧 Email: [shuvroshishir.dev@gmail.com](mailto:shuvroshishir.dev@gmail.com)
 
 ---
 
