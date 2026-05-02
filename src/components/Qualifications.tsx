@@ -46,19 +46,19 @@ export default function Qualifications() {
             <div className="relative timeline-line space-y-12 pl-12">
               {[
                 {
-                  title: "B.Sc. in Computer Science",
-                  subtitle: "Daffodil International University • 2021 - Present",
+                  title: "B.Sc. in Computer Science and Engineering",
+                  subtitle: "Daffodil International University • 2023 - Present",
                   desc: "Currently pursuing my undergraduate degree with a focus on software engineering and algorithmic complexity.",
                 },
                 {
                   title: "Higher Secondary Certificate (HSC)",
-                  subtitle: "Science Group • 2018 - 2020",
-                  desc: "",
+                  subtitle: "Mirzapur Govt. Collage • 2021",
+                  desc: "Completed higher secondary education with a strong foundation in science and mathematics.",
                 },
                 {
                   title: "Secondary School Certificate (SSC)",
-                  subtitle: "Science Group • 2016 - 2018",
-                  desc: "",
+                  subtitle: "Sristy Academic School • 2019",
+                  desc: "Completed secondary education with a focus on science and analytical thinking.",
                 },
               ].map((item, i) => (
                 <div key={i} className="timeline-item relative">
@@ -82,14 +82,14 @@ export default function Qualifications() {
             <div className="relative timeline-line space-y-12 pl-12">
               {[
                 {
-                  title: "Frontend Developer Intern",
-                  subtitle: "Tech Solutions Ltd • Jan 2023 - June 2023",
-                  desc: "Developed responsive web applications using React and integrated REST APIs for real-time data processing.",
+                  title: "Ai Powered Web Developer Intern",
+                  subtitle: "Programming Hero • 2025 - Present",
+                  desc: "Building full-stack web applications using the MERN stack (MongoDB, Express.js, React, Node.js), with a focus on scalable architecture and clean code. Developing responsive user interfaces, integrating RESTful APIs, and exploring AI-driven features to enhance user experience and functionality.",
                 },
                 {
-                  title: "Freelance Web Developer",
-                  subtitle: "Remote • 2021 - 2022",
-                  desc: "Collaborated with diverse clients to deliver high-quality portfolio websites and e-commerce solutions.",
+                  title: "Freelance Web Designer",
+                  subtitle: "Remote • 2024 - Present",
+                  desc: "Designed and delivered intuitive UI/UX experiences for portfolio and e-commerce websites, combining aesthetics with functionality to ensure engaging and user-friendly interfaces.",
                 },
               ].map((item, i) => (
                 <div key={i} className="timeline-item relative">
