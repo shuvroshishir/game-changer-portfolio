@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8f9ff;
+  --on-background: #0f172a;
+  --surface: #ffffff;
+  --on-surface: #1e293b;
+  --surface-container: #f1f5f9;
+  --primary: #3b82f6;
+  --secondary: #06b6d4;
+  --on-primary: #ffffff;
+  --on-secondary: #ffffff;
+  --outline: #94a3b8;
+  --outline-variant: #e2e8f0;
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --text-muted: #64748b;
+}
+
+.dark {
+  --background: #0b0e15;
+  --on-background: #f1f5f9;
+  --surface: #10131a;
+  --on-surface: #e2e8f0;
+  --surface-container: #1d2027;
+  --primary: #60a5fa;
+  --secondary: #22d3ee;
+  --on-primary: #0f172a;
+  --on-secondary: #083344;
+  --outline: #475569;
+  --outline-variant: #1e293b;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --text-muted: #94a3b8;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-on-background: var(--on-background);
+  --color-surface: var(--surface);
+  --color-on-surface: var(--on-surface);
+  --color-surface-container: var(--surface-container);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-on-primary: var(--on-primary);
+  --color-on-secondary: var(--on-secondary);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  --color-muted: var(--text-muted);
+
+  --font-h1: var(--font-space-grotesk);
+  --font-h2: var(--font-space-grotesk);
+  --font-h3: var(--font-space-grotesk);
+  --font-body-md: var(--font-manrope);
+  --font-body-lg: var(--font-manrope);
+  --font-label-caps: var(--font-space-grotesk);
+
+  --spacing-gutter: 32px;
+  --spacing-container-max: 1280px;
+  --spacing-section-padding: 120px;
+  --spacing-base: 8px;
+  --spacing-stack-sm: 16px;
+  --spacing-stack-md: 32px;
+  --spacing-stack-lg: 64px;
+
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-background font-body-md overflow-x-hidden selection:bg-primary/30 selection:text-primary transition-colors duration-300 min-h-screen cursor-none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-on-background transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-xl transition-all duration-300;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+  }
+
+  .glow-radial {
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+  }
+
+  .gradient-border-btn {
+    position: relative;
+    background: transparent;
+    border: 2px solid transparent;
+    background-image: linear-gradient(var(--background), var(--background)), linear-gradient(to right, #3b82f6, #22d3ee);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    @apply transition-all duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .timeline-line::before {
+    content: '';
+    @apply absolute left-[19px] top-0 bottom-0 w-[2px] bg-white/10;
+  }
+
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
