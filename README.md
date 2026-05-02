@@ -6,7 +6,7 @@ A modern, high-performance personal portfolio built with **Next.js**, featuring 
 
 ## 🚀 Live Demo
 
-🔗 https://your-portfolio-link.vercel.app
+🔗 https://shishir-karmokar-portfolio.vercel.app/
 
 ---
 
