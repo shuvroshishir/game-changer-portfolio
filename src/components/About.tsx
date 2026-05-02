@@ -29,8 +29,7 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="max-w-6xl mx-auto px-8 py-16 sm:py-section-padding relative">
-      <div id="about" className="absolute -top-32"></div>
+    <section ref={sectionRef} id="about" className="max-w-6xl mx-auto px-8 py-16 sm:py-section-padding relative">
       <div
         ref={contentRef}
         className="glass-card p-6 sm:p-10 md:p-stack-lg rounded-[32px] relative overflow-hidden"

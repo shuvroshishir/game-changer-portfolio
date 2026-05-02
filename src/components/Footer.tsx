@@ -25,20 +25,6 @@ export default function Footer() {
               <MapPin size={18} />
               <span>Dhaka, Bangladesh</span>
             </div>
-            <div className="flex items-center gap-3 text-primary font-body-md">
-              <Mail size={18} />
-              <span>shuvroshishir.dev@gmail.com</span>
-            </div>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-primary font-body-md">
-              <div className="flex items-center gap-3">
-                <Phone size={18} />
-                <span>01879785495</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone size={18} />
-                <span>01775915321</span>
-              </div>
-            </div>
           </div>
         </div>
 
