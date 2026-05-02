@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -35,7 +36,8 @@ export default function Navbar() {
         }`}
     >
       <div className="flex justify-between items-center w-full px-8 max-w-7xl mx-auto">
-        <Link href="/" className="text-xl font-bold tracking-tighter text-on-background font-h1">
+        <Link href="/" className="flex gap-1 items-center text-xl font-bold tracking-tighter text-on-background font-h1">
+          <Image src="/logo.png" alt="logo" height={25} width={25} />
           Mr. Shishir
         </Link>
 

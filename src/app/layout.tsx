@@ -33,6 +33,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
           rel="stylesheet"
         />
+        <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
       </head>
       <body className={`${spaceGrotesk.variable} ${manrope.variable} font-body-md bg-background text-on-background antialiased transition-colors duration-300`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
