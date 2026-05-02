@@ -143,7 +143,7 @@ export default function Hero() {
                 priority
                 sizes="(max-width: 768px) 320px, 450px"
                 suppressHydrationWarning
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                className="object-cover transition-all duration-700"
               />
             </div>
 

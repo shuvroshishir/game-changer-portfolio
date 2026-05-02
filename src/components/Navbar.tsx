@@ -31,13 +31,12 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "glass-card py-4" : "bg-transparent py-6"
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "border-0 shadow glass-card py-4" : "bg-transparent py-6"
+        }`}
     >
       <div className="flex justify-between items-center w-full px-8 max-w-7xl mx-auto">
         <Link href="/" className="text-xl font-bold tracking-tighter text-on-background font-h1">
-          Shishir Karmokar
+          Mr. Shishir
         </Link>
 
         {/* Desktop Menu */}
