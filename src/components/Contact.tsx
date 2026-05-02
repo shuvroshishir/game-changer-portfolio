@@ -124,10 +124,10 @@ export default function Contact() {
                     e.preventDefault();
                     setStatus("loading");
                     const formData = new FormData(e.currentTarget);
-                    
+
                     // IMPORTANT: You will need a Web3Forms Access Key
                     // Get it at https://web3forms.com/
-                    formData.append("access_key", "cb93b39b-e6fc-4239-81a4-f61e793d265b"); 
+                    formData.append("access_key", "cb93b39b-e6fc-4239-81a4-f61e793d265b");
 
                     try {
                       const response = await fetch("https://api.web3forms.com/submit", {
@@ -161,12 +161,12 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="font-label-caps text-muted text-xs">PHONE</label>
+                      <label className="font-label-caps text-muted text-xs">ADDRESS</label>
                       <input
-                        type="tel"
-                        name="phone"
+                        type="text"
+                        name="address"
                         required
-                        placeholder="Insert your phone number"
+                        placeholder="Insert your address"
                         className="w-full bg-surface-container border border-outline-variant rounded-xl px-4 py-3 text-on-background focus:border-blue-500 focus:ring-0 outline-none transition-colors"
                       />
                     </div>
@@ -174,12 +174,14 @@ export default function Contact() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="font-label-caps text-muted text-xs">ADDRESS</label>
+                      <label className="font-label-caps text-muted text-xs">PHONE</label>
                       <input
-                        type="text"
-                        name="address"
+                        type="tel"
+                        name="phone"
                         required
-                        placeholder="Insert your address"
+                        pattern="[0-9]{11}"
+                        title="Please enter a valid 11-digit phone number"
+                        placeholder="Insert your phone number"
                         className="w-full bg-surface-container border border-outline-variant rounded-xl px-4 py-3 text-on-background focus:border-blue-500 focus:ring-0 outline-none transition-colors"
                       />
                     </div>
@@ -195,12 +197,12 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="font-label-caps text-muted text-xs">PROJECT</label>
+                    <label className="font-label-caps text-muted text-xs">MESSAGE</label>
                     <textarea
                       name="message"
                       required
                       rows={4}
-                      placeholder="Write your project details"
+                      placeholder="Write your message about the project"
                       className="w-full bg-surface-container border border-outline-variant rounded-xl px-4 py-3 text-on-background focus:border-blue-500 focus:ring-0 outline-none transition-colors"
                     ></textarea>
                   </div>
@@ -217,7 +219,7 @@ export default function Contact() {
                     disabled={status === "loading"}
                     className="gradient-border-btn w-full md:w-auto px-12 py-4 rounded-xl font-h3 text-[18px] text-on-background flex items-center justify-center gap-3 transition-transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {status === "loading" ? "Sending..." : "Send Message"}
+                    {status === "loading" ? "Sending..." : "Send"}
                     {status === "loading" ? (
                       <div className="w-5 h-5 border-2 border-on-background/30 border-t-on-background rounded-full animate-spin" />
                     ) : (

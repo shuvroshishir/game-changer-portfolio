@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="font-label-caps text-blue-400 mb-6 uppercase tracking-widest">Connect With Me</h4>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-1 sm:gap-3">
               <Link
                 href="https://github.com/shuvroshishir"
                 target="_blank"

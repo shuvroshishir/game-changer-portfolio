@@ -18,17 +18,17 @@ export default function Projects() {
 
     const ctx = gsap.context(() => {
       // Use fromTo to ensure visibility and add a slight delay to allow layout to settle
-      gsap.fromTo(".project-card", 
-        { 
-          y: 60, 
-          opacity: 0 
+      gsap.fromTo(".project-card",
+        {
+          y: 30,
+          opacity: 0
         },
         {
           y: 0,
           opacity: 1,
-          duration: 1,
-          stagger: 0.3,
-          ease: "power3.out",
+          duration: 0.8,
+          stagger: 0.2,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 85%", // Trigger slightly earlier

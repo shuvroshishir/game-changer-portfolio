@@ -18,10 +18,10 @@ export default function About() {
           start: "top 80%",
           toggleActions: "play none none reverse",
         },
-        y: 60,
+        y: 20,
         opacity: 0,
-        duration: 1.2,
-        ease: "power3.out",
+        duration: 0.5,
+        ease: "power2.out",
       });
     }, sectionRef);
 
@@ -40,20 +40,20 @@ export default function About() {
           <h2 className="font-h2 text-4xl md:text-h2 text-on-background font-bold">About Me</h2>
           <div className="space-y-6 text-muted font-body-lg">
             <p>
-              I am a <span className="text-primary font-bold">MERN Stack Developer</span> with a strong interest in building scalable, 
-              high-performance web applications enhanced with AI-driven capabilities. Currently pursuing a degree in 
-              <span className="text-secondary font-medium">Computer Science and Engineering</span>, I have developed a solid foundation in modern web 
+              I am a <span className="text-primary font-bold">MERN Stack Developer</span> with a strong interest in building scalable,
+              high-performance web applications enhanced with AI-driven capabilities. Currently pursuing a degree in
+              <span className="text-secondary font-medium">Computer Science and Engineering</span>, I have developed a solid foundation in modern web
               technologies and software development principles.
             </p>
             <p>
-              My experience includes developing full-stack applications using MongoDB, Express.js, React, and Node.js, 
-              with a focus on writing clean, maintainable code and designing intuitive user interfaces. I am particularly 
-              interested in <span className="text-secondary font-medium">integrating artificial intelligence</span> into web applications to create smarter, 
+              My experience includes developing full-stack applications using MongoDB, Express.js, React, and Node.js,
+              with a focus on writing clean, maintainable code and designing intuitive user interfaces. I am particularly
+              interested in <span className="text-secondary font-medium">integrating artificial intelligence</span> into web applications to create smarter,
               more efficient, and user-centric solutions.
             </p>
             <p>
-              I am continuously expanding my skill set by exploring advanced topics such as authentication systems, 
-              API architecture, and distributed systems. I approach development with a problem-solving mindset and a 
+              I am continuously expanding my skill set by exploring advanced topics such as authentication systems,
+              API architecture, and distributed systems. I approach development with a problem-solving mindset and a
               commitment to delivering reliable and impactful digital products.
             </p>
           </div>
