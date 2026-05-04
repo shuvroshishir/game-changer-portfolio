@@ -61,8 +61,8 @@ export const projects: Project[] = [
     description: "Live stock booking platform with seamless payment integration.",
     fullDescription: "Qurbanihat is a specialized livestock booking platform built with Next.js and Better Auth. It features a secure booking system, real-time availability tracking, and integrated payment gateways to simplify the livestock purchasing process.",
     image: "/images/projects/qurbanihat.png",
-    tags: ["NEXT.JS", "BETTER AUTH", "TAILWIND"],
-    liveUrl: "",
+    tags: ["NEXT.JS", "TAILWIND", "BETTER AUTH", "GOOGLE AUTH"],
+    liveUrl: "https://qurbanihat-livestock-booking.vercel.app/",
     githubUrl: "https://github.com/shuvroshishir/qurbanihat-livestock-booking",
     challenges: [
       "Implementing complex livestock inventory management.",
